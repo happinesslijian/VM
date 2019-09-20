@@ -157,3 +157,6 @@ systemctl start httpd && systemctl enable httpd && systemctl status httpd && sys
 http://IP/ldapadmin/
 ```
 [如图所示](https://i.loli.net/2019/09/19/BRJ8gvqy9i17xMl.png)
+
+## 接入应用设置
+- [接入jumpserver设置](https://i.loli.net/2019/09/20/IRidulCYjp8BPbW.png)
