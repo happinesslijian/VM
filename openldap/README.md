@@ -160,3 +160,4 @@ http://IP/ldapadmin/
 
 ## 接入应用设置
 - [接入jumpserver设置](https://i.loli.net/2019/09/20/IRidulCYjp8BPbW.png)
+- [接入容器gitlab应用](https://i.loli.net/2019/09/21/eSHlx5pnWf34PIz.png) **这里使用的是helm安装的gitlab，图片内容填写在values.yaml文件里**
