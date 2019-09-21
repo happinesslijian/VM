@@ -161,7 +161,7 @@ http://IP/ldapadmin/
 ## 接入应用设置
 - [接入jumpserver设置](https://i.loli.net/2019/09/20/IRidulCYjp8BPbW.png)
 - [接入容器gitlab应用](https://i.loli.net/2019/09/21/eSHlx5pnWf34PIz.png)
-  - 这里使用的是helm安装的gitlab，图片内容填写在values.yaml文件里
+  - 这里使用的是helm安装的gitlab，内容填写在values.yaml文件里
   - 代码如下：
 ```
     LDAP_ENABLED: true
@@ -178,3 +178,9 @@ http://IP/ldapadmin/
     LDAP_ALLOW_USERNAME_OR_EMAIL_LOGIN: false
     LDAP_BASE: ou=gitlab,dc=dycd,dc=com
 ```
+  - 判断LDAP是否连接成功可以连接到pod内查看
+```
+# kubectl exec -it gitlab-gitlab-core-0 /bin/bash -n gitlab
+# ./bin/rake gitlab:ldap:check
+```
+[如图所示](https://i.loli.net/2019/09/22/pqN2M5rRestVYLc.png)
