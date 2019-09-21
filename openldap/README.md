@@ -160,4 +160,21 @@ http://IP/ldapadmin/
 
 ## 接入应用设置
 - [接入jumpserver设置](https://i.loli.net/2019/09/20/IRidulCYjp8BPbW.png)
-- [接入容器gitlab应用](https://i.loli.net/2019/09/21/eSHlx5pnWf34PIz.png) **这里使用的是helm安装的gitlab，图片内容填写在values.yaml文件里**
+- [接入容器gitlab应用](https://i.loli.net/2019/09/21/eSHlx5pnWf34PIz.png)
+  - 这里使用的是helm安装的gitlab，图片内容填写在values.yaml文件里
+  - 代码如下：
+```
+    LDAP_ENABLED: true
+    LDAP_LABEL: LDAP
+    LDAP_HOST: 192.168.100.167
+    LDAP_PORT: 389
+    LDAP_UID: uid
+    LDAP_BIND_DN: cn=admin,dc=dycd,dc=com
+    LDAP_PASS: passwd
+    LDAP_TIMEOUT: 10
+    LDAP_METHOD: plain
+    LDAP_VERIFY_SSL: false
+    LDAP_ACTIVE_DIRECTORY: false
+    LDAP_ALLOW_USERNAME_OR_EMAIL_LOGIN: false
+    LDAP_BASE: ou=gitlab,dc=dycd,dc=com
+```
