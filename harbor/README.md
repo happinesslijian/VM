@@ -62,13 +62,13 @@ vim harbor.yml
 浏览器登录刚才的域名即可看到登录界面
 ## 问题说明：
 当你登录harbor的时候会提示如下：
-![微信截图_20190925110543.png](https://i.loli.net/2019/09/25/InkvDluhKJfMpHT.png)
+![微信截图_20190925110543.png](https://i.loli.net/2019/09/25/InkvDluhKJfMpHT.png) \
 因为harbor默认使用的是https而我们这是是http，所以要更改下面：
 ```
 vim /lib/systemd/system/docker.service
 systemctl daemon-reload && systemctl restart docker
 ```
-![微信截图_20190925111559.png](https://i.loli.net/2019/09/25/a5MvLTEKFnPfASk.png)
+![微信截图_20190925111559.png](https://i.loli.net/2019/09/25/a5MvLTEKFnPfASk.png) \
 更改/etc/docker/daemon.json文件
 ```
 vim /etc/docker/daemon.json
