@@ -3,3 +3,4 @@
 |:--:|:--:|:--:|:--:|:--:|
 |[KVM-webvirtmgr](https://github.com/happinesslijian/VM/tree/master/KVM-webvirtmgr)|图形化管理KVM|80/6080/8000|nginx/supervisord|CentOS Linux release 7.6.1810|
 |[openldap](https://github.com/happinesslijian/VM/tree/master/openldap)|统一认证用户|389/80|slapd/httpd|CentOS Linux release 7.6.1810|
+|[nfs](https://github.com/happinesslijian/VM/tree/master/VM%E5%AE%89%E8%A3%85nfs)|持久化存储|2049|rpcbind/nfs|CentOS Linux release 7.6.1810|
