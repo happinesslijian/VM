@@ -6,3 +6,4 @@
 |[nfs](https://github.com/happinesslijian/VM/tree/master/VM%E5%AE%89%E8%A3%85nfs)|持久化存储|2049|rpcbind/nfs|CentOS Linux release 7.6.1810|
 |[harbor](https://github.com/happinesslijian/VM/tree/master/harbor)|镜像仓库|80|docker-proxy|CentOS Linux release 7.6.1810|
 |[gitlab](https://github.com/happinesslijian/VM/tree/master/gitlab)|代码托管仓库|80/8080|gitlab-ctl|CentOS Linux release 7.6.1810|
+|[redis](https://github.com/happinesslijian/VM/blob/master/redis/redis.md)|缓存中间件|6379|redisd|CentOS Linux release 7.6.1810|
