@@ -15,6 +15,8 @@ IP:3000
 ```
 `默认用户名密码admin/admin`
 # grafana接入ldap
+[参考链接](https://grafana.com/docs/auth/ldap/) \
+[参考链接](https://blog.frognew.com/2017/07/config-grafana-with-ldap.html)
 - 修改grafana的配置文件`grafana.ini`
 ```
 vim /etc/grafana/grafana.ini
