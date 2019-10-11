@@ -114,6 +114,6 @@ org_role = "Viewer"
 systemctl restart grafana-server
 ```
 - 重新打开grafana Dashboard,输入ldap已经存在的用户点击run可以看到如下效果即为成功 \
-[如图所示]()
+[如图所示](http://tva1.sinaimg.cn/large/007X8olVly1g7u2aznmqmj31400p0mz7.jpg)
   - 接下来可以使用ldap创建出来的用户进行登录了
 ## [安装openldap](https://github.com/happinesslijian/VM/tree/master/openldap)
