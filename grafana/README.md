@@ -35,7 +35,7 @@ config_file = /etc/grafana/ldap.toml
 ```
 vim /etc/grafana/ldap.toml
 ```
-  - 填写如下内容
+   - 填写如下内容
 ```
 # To troubleshoot and get more log info enable ldap debug logging in grafana.ini
 # [log]
@@ -114,3 +114,4 @@ systemctl restart grafana-server
 - 重新打开grafana Dashboard,输入ldap已经存在的用户点击run可以看到如下效果即为成功 \
 [如图所示]()
   - 接下来可以使用ldap创建出来的用户进行登录了
+## [安装openldap](https://github.com/happinesslijian/VM/tree/master/openldap)
