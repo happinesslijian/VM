@@ -23,7 +23,7 @@ vim /etc/grafana/grafana.ini
 ```
 [auth.ldap]
 enabled = true
-config_file = /etc/grafana/`ldap.toml`
+config_file = /etc/grafana/ldap.toml
 ;allow_sign_up = true
 
 # LDAP backround sync (Enterprise only)
@@ -31,7 +31,7 @@ config_file = /etc/grafana/`ldap.toml`
 ;sync_cron = "0 0 1 * * *"
 ;active_sync_enabled = true
 ```
-- 修改grafana的ldap配置文件ldap.toml
+- 修改grafana的ldap配置文件`ldap.toml`
 ```
 vim /etc/grafana/ldap.toml
 ```
