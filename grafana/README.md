@@ -23,7 +23,7 @@ vim /etc/grafana/grafana.ini
 ```
 [auth.ldap]
 enabled = true
-config_file = /etc/grafana/ldap.toml
+config_file = /etc/grafana/`ldap.toml`
 ;allow_sign_up = true
 
 # LDAP backround sync (Enterprise only)
