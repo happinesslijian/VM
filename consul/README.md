@@ -26,7 +26,7 @@ consul members
 ![示例](https://i.loli.net/2019/10/31/PmA1xvGLzNrUwfY.png)
 - **使用-config-dir=/etc/consul.d指定了从哪个配置文件启动**
 ```
-nohup consul agent -server -bootstrap-expect 1 -data-dir /tmp/consulmaster -bind=192.168.100.158 -config-dir=/etc/consul.d -client 0.0.0.0 -ui &
+nohup consul agent -server -bootstrap-expect 1 -data-dir /tmp/consulmaster -bind=192.168.100.158 -config-dir=/etc/consul.d -client 0.0.0.0 -ui >> /var/log/consul/consul.log 2>&1 &
 ```
 - 进入consul-node节点启动consul   `client操作`
 ```
