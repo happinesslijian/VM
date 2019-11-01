@@ -16,7 +16,7 @@ consul -v
   - -ui： 启动ui
 ```
 mkdir -p /var/log/consul
-nohup consul agent -server -bootstrap-expect 1 -data-dir /tmp/consulserver -node=master -bind=192.168.100.164 -client 0.0.0.0 -ui >> /var/log/consul/consul.log 2>&1 &
+nohup consul agent -server -bootstrap-expect 1 -data-dir /tmp/consulserver -node=server -bind=192.168.100.164 -client 0.0.0.0 -ui >> /var/log/consul/consul.log 2>&1 &
 ```
 - 查看集群成员
 ```
