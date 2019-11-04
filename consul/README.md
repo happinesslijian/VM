@@ -51,7 +51,7 @@ consul join 192.168.100.164
 {
   "service": {
   "id": "Nextcloud on Kubernetes 私有云",
-  "name": "Nextcloud on Kubernetes 私有云",
+  "name": "私有云",
   "address": "192.168.100.158",
   "port": 9115, #blackbox_exporter监控监控网站,使用http协议,端口是9115
   "tags": [
@@ -97,7 +97,7 @@ consul join 192.168.100.164
 {
   "service": {
   "id": "master-192-168-100-150",
-  "name": "第一环境-master",
+  "name": "第一环境",
   "address": "192.168.100.150",
   "port": 9100, #node_exporter监控linux主机,端口是9100
   "tags": [
