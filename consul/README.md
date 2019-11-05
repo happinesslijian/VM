@@ -18,7 +18,7 @@ consul -v
   - -ui： 启动ui
 ```
 mkdir -p /var/log/consul
-nohup consul agent -server -bootstrap-expect 1 -data-dir /tmp/consulserver -node=server -bind=192.168.100.164 -client 0.0.0.0 -ui >> /var/log/consul/consul.log 2>&1 &
+nohup consul agent -server -bootstrap-expect 1 -data-dir /tmp/consulserver -node=server -bind=127.0.0.1 -client 0.0.0.0 -ui >> /var/log/consul/consul.log 2>&1 &
 ```
 - 查看集群成员
 ```
@@ -28,7 +28,7 @@ consul members
 ![示例](https://i.loli.net/2019/10/31/PmA1xvGLzNrUwfY.png)
 - **使用-config-dir=/etc/consul.d指定了从哪个配置文件启动**
 ```
-nohup consul agent -server -bootstrap-expect 1 -data-dir /tmp/consulserver -node=server -bind=192.168.100.164 -config-dir=/etc/consul.d -client 0.0.0.0 -ui >> /var/log/consul/consul.log 2>&1 &
+nohup consul agent -server -bootstrap-expect 1 -data-dir /tmp/consulserver -node=server -bind=127.0.0.1 -config-dir=/etc/consul.d -client 0.0.0.0 -ui >> /var/log/consul/consul.log 2>&1 &
 ```
 #### 进入consul-client节点启动consul   `client操作`
 ```
@@ -37,7 +37,7 @@ unzip consul_*
 cp consul /usr/local/bin/
 consul -v
 #启动consul
-nohup consul agent -data-dir /tmp/consulclient -node=client-1 -bind=192.168.100.165 >> /var/log/consul/consul.log 2>&1 &
+nohup consul agent -data-dir /tmp/consulclient -node=client-1 -bind=127.0.0.1 >> /var/log/consul/consul.log 2>&1 &
 #加入集群
 consul join 192.168.100.164
 ```
@@ -131,3 +131,23 @@ consul join 192.168.100.164
       - source_labels: [__meta_consul_service_id]
         target_label: group
 ```
+# systemctl管理consul服务
+```
+[Unit]
+Description=consul
+After=syslog.target network.target
+
+[Service]
+Type=simple
+RemainAfterExit=no
+WorkingDirectory=/usr/local/bin
+ExecStart=/usr/local/bin/consul agent -ui -server -node=server -bootstrap -bind 127.0.0.1 -client 0.0.0.0 \
+  -data-dir /tmp/consulserver -config-dir=/etc/consul.d \
+  -log-file /var/log/consul/
+
+[Install]
+WantedBy=multi-user.target
+```
+systemctl daemon-reload
+systemctl start consul
+systemctl status consul
