@@ -143,8 +143,8 @@ After=syslog.target network.target
 Type=simple
 RemainAfterExit=no
 WorkingDirectory=/usr/local/bin
-ExecStart=/usr/local/bin/consul agent -ui -server -node=server -bootstrap -bind 127.0.0.1 -client 0.0.0.0
-  -data-dir /tmp/consulserver -config-dir=/etc/consul.d 
+ExecStart=/usr/local/bin/consul agent -ui -server -node=server -bootstrap -bind 127.0.0.1 -client 0.0.0.0 \\
+  -data-dir /tmp/consulserver -config-dir=/etc/consul.d \\
   -log-file /var/log/consul/
 
 [Install]
