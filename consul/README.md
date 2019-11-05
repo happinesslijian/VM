@@ -61,7 +61,7 @@ consul join 192.168.100.164
   ],
   "checks": [
     {
-      "http": "http://192.168.100.158:9115/probe?module=http_2xx&target=https%3A%2F%2F72a7a112.cpolar.cn",   #这部分在prometheus获取,首先要有一个静态监控来进行查看并获取。
+      "http": "http://192.168.100.158:9115/probe?module=http_2xx&target=https://715fb689.cpolar.cn",
       "interval": "15s"
     }
   ]
@@ -148,6 +148,6 @@ ExecStart=/usr/local/bin/consul agent -ui -server -node=server -bootstrap -bind 
 [Install]
 WantedBy=multi-user.target
 ```
-systemctl daemon-reload
-systemctl start consul
+systemctl daemon-reload \
+systemctl start consul \
 systemctl status consul
