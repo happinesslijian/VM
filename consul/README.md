@@ -132,7 +132,9 @@ consul join 192.168.100.164
         target_label: group
 ```
 # systemctl管理consul服务
+
 ```
+cat > /etc/systemd/system/consul.service <<EOF
 [Unit]
 Description=consul
 After=syslog.target network.target
@@ -141,12 +143,14 @@ After=syslog.target network.target
 Type=simple
 RemainAfterExit=no
 WorkingDirectory=/usr/local/bin
-ExecStart=/usr/local/bin/consul agent -ui -server -node=server -bootstrap -bind 127.0.0.1 -client 0.0.0.0 \
-  -data-dir /tmp/consulserver -config-dir=/etc/consul.d \
+ExecStart=/usr/local/bin/consul agent -ui -server -node=server -bootstrap -bind 127.0.0.1 -client 0.0.0.0
+  -data-dir /tmp/consulserver -config-dir=/etc/consul.d 
   -log-file /var/log/consul/
 
 [Install]
 WantedBy=multi-user.target
+
+EOF
 ```
 systemctl daemon-reload \
 systemctl start consul \
