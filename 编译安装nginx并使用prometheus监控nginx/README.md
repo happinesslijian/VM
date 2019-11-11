@@ -1,5 +1,6 @@
-https://www.jianshu.com/p/affac5f2d56e
-https://www.hi-linux.com/posts/27014.html
+参考文档： \
+https://www.jianshu.com/p/affac5f2d56e \
+https://www.hi-linux.com/posts/27014.html \
 https://www.jianshu.com/p/d72c8f06684a
 # 编译安装nginx并使用prometheus监控nginx
 - 下载nginx
