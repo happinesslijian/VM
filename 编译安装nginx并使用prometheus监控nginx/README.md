@@ -140,7 +140,7 @@ http://IP:9913/metrics
 http://192.168.100.139:9913/metrics
 ```
 [如图所示](https://i.loli.net/2019/11/11/fY4crQazw7Fg2hx.png)
-# prometheus监控nginx配置
+# prometheus静态监控nginx配置
 vim /etc/prometheus/prometheus.yml
 ```
   - job_name: nginx
@@ -152,6 +152,21 @@ vim /etc/prometheus/prometheus.yml
 重启prometheus
 ```
 systemctl restart prometheus
+```
+# prometheus基于文件服务发现监控nginx配置
+vim /etc/prometheus/prometheus.yml
+```
+  - job_name: nginx
+    file_sd_configs:
+      - files:
+        - nginx/nginx_vts_exporter.yaml
+```
+vim /etc/prometheus/nginx/nginx_vts_exporter.yaml
+```
+- targets:
+  - 192.168.100.139:9913
+  labels:
+    group: nginx-1项目测试
 ```
 grafana模板ID   `2949`
 
