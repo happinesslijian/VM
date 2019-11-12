@@ -120,4 +120,7 @@ vim /etc/prometheus/mysql/mysqld_exporter.yaml
     instance: db123
     group: 某某项目组使用
 ```
-[grafana模板下载]()
+下载Percona提供的模板
+```
+git clone https://github.com/percona/grafana-dashboards.git
+```
