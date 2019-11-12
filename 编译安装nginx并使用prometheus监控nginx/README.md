@@ -166,6 +166,7 @@ vim /etc/prometheus/nginx/nginx_vts_exporter.yaml
 - targets:
   - 192.168.100.139:9913
   labels:
+    instance: nginx-web-1
     group: nginx-1项目测试
 ```
 grafana模板ID   `2949`
