@@ -1,5 +1,5 @@
 #!/bin/bash
-#配置开机启动node_exporter
+#配置开机启动nginx_vts_exporter
 #下载安装包并解压
 wget https://github.com/hnlq715/nginx-vts-exporter/releases/download/v0.10.3/nginx-vts-exporter-0.10.3.linux-amd64.tar.gz
 if [ $? -ne 0 ]; then
