@@ -111,6 +111,16 @@ vim /etc/prometheus/prometheus.yml
     file_sd_configs:
       - files:
         - mysql/mysqld_exporter.yaml
+    metrics_path: /metrics
+    relabel_configs:
+    - source_labels: [__address__]
+      regex: (.*)
+      target_label: instance
+      replacement: $1
+    - source_labels: [__address__]
+      regex: (.*)
+      target_label: __address__
+      replacement: $1
 ```
 vim /etc/prometheus/mysql/mysqld_exporter.yaml
 ```
