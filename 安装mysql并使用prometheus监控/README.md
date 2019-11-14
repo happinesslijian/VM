@@ -131,6 +131,7 @@ vim /etc/prometheus/mysql/mysqld_exporter.yaml
     group: 某某项目组使用
 ```
 下载Percona提供的模板
+grafana dashboardID 7362
 ```
 git clone https://github.com/percona/grafana-dashboards.git
 ```
