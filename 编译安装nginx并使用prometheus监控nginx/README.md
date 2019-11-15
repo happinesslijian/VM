@@ -242,3 +242,36 @@ http {
 http://192.168.100.139/status
 
 www.alertmanager.test.com
+
+# nginx启用Basic auth认证
+- 安装httpd-tools并创建用户名密码
+```
+yum install httpd-tools -y
+htpasswd -c -d /data/basic_file admin
+```
+```
+    server {
+        listen       80; 
+        listen       443 ssl;
+        ssl_certificate /data/tls.crt;
+        ssl_certificate_key /data/tls.key;
+        server_name  alertmanager.test.com; #指定要代理的服务名称
+        root         /usr/share/nginx/html;
+        
+        include /etc/nginx/default.d/*.conf;
+        
+        if ($server_port = 80 ) {
+                return 301 https://$host$request_uri;
+        }
+        location /status {
+            vhost_traffic_status_display; #监控nginx必写参数！
+            vhost_traffic_status_display_format html; #监控nginx必写参数！
+        } #下面是配置第二个location模块,用作反向代理
+        location / {
+            proxy_pass http://192.168.0.141:9093;
+            auth_basic 'Login authentication'; #Basic auth认证参数
+            auth_basic_user_file /data/basic_file; #Basic auth认证参数
+        }
+        error_page 497  https://$host$request_uri;
+        }
+```
