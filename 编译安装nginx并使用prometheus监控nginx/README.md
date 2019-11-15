@@ -8,7 +8,7 @@ https://www.jianshu.com/p/d72c8f06684a
 cd /usr/local
 useradd nginx
 wget http://nginx.org/download/nginx-1.12.2.tar.gz
-git clone git://github.com/vozlt/nginx-module-vts.git
+git clone https://github.com/vozlt/nginx-module-vts.git
 yum -y install gcc automake pcre-devel zlib-devel openssl-devel
 ```
 - 编译安装nginx
