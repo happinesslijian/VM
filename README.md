@@ -11,3 +11,4 @@
 |[consul](https://github.com/happinesslijian/VM/tree/master/consul)|服务注册|8300/8500|consul|CentOS Linux release 7.6.1810|
 |[mysql/mysqld_exporter](https://github.com/happinesslijian/VM/tree/master/%E5%AE%89%E8%A3%85mysql%E5%B9%B6%E4%BD%BF%E7%94%A8prometheus%E7%9B%91%E6%8E%A7)|监控mysql|3306/9104|mysqld/mysqld_exporter|CentOS Linux release 7.6.1810|
 |[redis/redis_exporter](https://github.com/happinesslijian/VM/tree/master/%E5%AE%89%E8%A3%85redis%E5%B9%B6%E4%BD%BF%E7%94%A8prometheus%E7%9B%91%E6%8E%A7)|监控redis|6379/9121|redisd/redis_exporter|CentOS Linux release 7.6.1810|
+|[tomcat/jmx_exporter](https://github.com/happinesslijian/VM/tree/master/%E5%AE%89%E8%A3%85tomcat%E5%B9%B6%E4%BD%BF%E7%94%A8prometheus%E7%9B%91%E6%8E%A7)|监控tomcat|8080/38081||CentOS Linux release 7.6.1810|
