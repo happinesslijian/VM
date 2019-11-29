@@ -12,3 +12,4 @@
 |[mysql/mysqld_exporter](https://github.com/happinesslijian/VM/tree/master/%E5%AE%89%E8%A3%85mysql%E5%B9%B6%E4%BD%BF%E7%94%A8prometheus%E7%9B%91%E6%8E%A7)|监控mysql|3306/9104|mysqld/mysqld_exporter|CentOS Linux release 7.6.1810|
 |[redis/redis_exporter](https://github.com/happinesslijian/VM/tree/master/%E5%AE%89%E8%A3%85redis%E5%B9%B6%E4%BD%BF%E7%94%A8prometheus%E7%9B%91%E6%8E%A7)|监控redis|6379/9121|redisd/redis_exporter|CentOS Linux release 7.6.1810|
 |[tomcat/jmx_exporter](https://github.com/happinesslijian/VM/tree/master/%E5%AE%89%E8%A3%85tomcat%E5%B9%B6%E4%BD%BF%E7%94%A8prometheus%E7%9B%91%E6%8E%A7)|监控tomcat|8080/38081||CentOS Linux release 7.6.1810|
+|[nginx/nginx_vts_exporter](https://github.com/happinesslijian/VM/tree/master/%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85nginx%E5%B9%B6%E4%BD%BF%E7%94%A8prometheus%E7%9B%91%E6%8E%A7nginx)|监控nginx|80/9913|nginx/nginx_vts_exporter|CentOS Linux release 7.6.1810|
