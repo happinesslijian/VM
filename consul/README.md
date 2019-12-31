@@ -152,6 +152,8 @@ WantedBy=multi-user.target
 
 EOF
 ```
-systemctl daemon-reload \
-systemctl start consul \
+```
+systemctl daemon-reload 
+systemctl start consul 
 systemctl status consul
+```
