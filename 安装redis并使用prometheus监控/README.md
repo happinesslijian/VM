@@ -106,7 +106,7 @@ vim /etc/prometheus/prometheus.yml
   - job_name: redis
     file_sd_configs:
       - files:
-        - nginx/redis_exporter.yaml
+        - redis/redis_exporter.yaml
     metrics_path: /metrics
     relabel_configs:
     - source_labels: [__address__]
