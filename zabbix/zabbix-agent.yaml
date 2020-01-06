@@ -1,0 +1,48 @@
+apiVersion: extensions/v1beta1
+kind: DaemonSet
+metadata:
+  name: zabbixagent
+  namespace: zabbix
+spec:
+  template:
+    metadata:
+      labels:
+        app: zabbixagent
+    spec:
+      containers:
+      - name: zabbixagent
+        image: zabbix/zabbix-agent:latest
+        imagePullPolicy: Always
+        env:
+        - name: ZBX_SERVER_HOST
+          value: zabbixserver
+        - name: ZBX_HOSTNAMEITEM
+          value: system.hostname
+        - name: ZBX_METADATA
+          value: myagent
+        securityContext:
+          privileged: true
+        ports:
+        - containerPort: 10050
+          protocol: TCP
+        volumeMounts:
+        - mountPath: /var/log
+          name: host-log
+        livenessProbe:
+          exec:
+            command:
+            - /bin/sh
+            - -c
+            - ps -ef | grep zabbix_agentd | grep -v "grep"
+          initialDelaySeconds: 60
+          periodSeconds: 60
+      nodeSelector:
+        beta.kubernetes.io/os: linux
+      tolerations:
+      - key: node-role.kubernetes.io/master
+        operator: Exists
+        effect: NoSchedule
+      volumes:
+      - name: host-log
+        hostPath:
+          path: /var/log

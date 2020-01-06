@@ -1,0 +1,48 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: zabbixserver
+  namespace: zabbix
+  labels:
+    app: zabbixserver
+spec:
+  ports:
+  - name: tcp-10051
+    protocol: TCP
+    port: 10051
+    targetPort: 10051
+  selector:
+    app: zabbixserver
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: zabbixweb
+  namespace: zabbix
+  labels:
+    app: zabbixweb
+spec:
+  type: NodePort
+  ports:
+  - name: tcp-80
+    protocol: TCP
+    port: 80
+    targetPort: 80
+  selector:
+    app: zabbixweb
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mysql
+  namespace: zabbix
+  labels:
+    app: mysql
+spec:
+  ports:
+  - name: tcp-3306
+    protocol: TCP
+    port: 3306
+    targetPort: 3306
+  selector:
+    app: mysql

@@ -1,0 +1,33 @@
+kind: Deployment
+apiVersion: extensions/v1beta1
+metadata:
+  name: mysql
+  namespace: zabbix
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: mysql
+    spec:
+      containers:
+      - name: mysql
+        image: mysql:5.5
+        resources:
+          limits:
+            cpu: 2000m
+            memory: 2Gi
+          requests:
+            cpu: 1000m
+            memory: 1000Mi
+        ports:
+        - containerPort: 3306
+        env:
+        - name: MYSQL_DATABASE
+          value: zabbix
+        - name: MYSQL_USER
+          value: zabbix
+        - name: MYSQL_PASSWORD
+          value: zabbix
+        - name: MYSQL_ROOT_PASSWORD
+          value: zabbix

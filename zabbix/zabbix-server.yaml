@@ -1,0 +1,35 @@
+kind: Deployment
+apiVersion: extensions/v1beta1
+metadata:
+  name: zabbixserver
+  namespace: zabbix
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: zabbixserver
+    spec:
+      containers:
+      - name: zabbixserver
+        image: zabbix/zabbix-server-mysql:latest
+        resources:
+          limits:
+            cpu: 2000m
+            memory: 2Gi
+          requests:
+            cpu: 1000m
+            memory: 1000Mi
+        ports:
+        - containerPort: 10051
+        env:
+        - name: DB_SERVER_HOST
+          value: mysql
+        - name: MYSQL_DATABASE
+          value: zabbix
+        - name: MYSQL_USER
+          value: zabbix
+        - name: MYSQL_PASSWORD
+          value: zabbix
+        - name: MYSQL_ROOT_PASSWORD
+          value: zabbix
