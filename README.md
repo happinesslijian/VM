@@ -1,4 +1,12 @@
 # 此项目都在VM里部署
+<a href="https://github.com/happinesslijian/VM/issues"><img alt="GitHub issues" src="https://img.shields.io/github/issues/happinesslijian/VM"></a>
+<a href="https://github.com/happinesslijian/VM/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/happinesslijian/VM"></a>
+<a href="https://github.com/happinesslijian/VM/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/happinesslijian/VM"></a>
+<img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/happinesslijian/VM">
+<img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/happinesslijian/VM">
+<img alt="GitHub code size in bytes" src="https://img.shields.io/github/languages/code-size/happinesslijian/VM">
+<a href="https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fgithub.com%2Fhappinesslijian%2FVM"><img alt="Twitter" src="https://img.shields.io/twitter/url?url=https%3A%2F%2Ftwitter.com%2FHappinessjian"></a>
+
 |应用名称|作用|端口|服务|部署环境|
 |:--:|:--:|:--:|:--:|:--:|
 |[KVM-webvirtmgr](https://github.com/happinesslijian/VM/tree/master/KVM-webvirtmgr)|图形化管理KVM|80/6080/8000|nginx/supervisord|CentOS Linux release 7.6.1810|
