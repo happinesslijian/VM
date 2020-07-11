@@ -1,4 +1,16 @@
+# harbor脚本部署
+> 注意：需要提前下载好离线包,并和脚本处于同一目录
+
+|脚本名称|操作系统|说明|备注|作用|
+|:--:|:--:|:--:|:--:|:--:|
+|harbor.sh|centos7.x|用于部署在纯净的centos7.x操作系统上|在已有docker环境上未测试|使用docker-compose安装harbor|
+|harbor-docker-client.sh|centos7.x|安装docker环境并配置登陆harbor相关参数|纯净操作系统/已有docker操作系统均可|安装docker环境并配置harbor|
+|harbor-k8s-client.sh|centos7.x|适用于k8s集群|在k8s集群节点操作,**注意修改脚本,脚本内有注释**|为k8s集群节点加入到harbor|
+
+
+
 # docker-compose安装harbor
+### 手动安装
 更改主机名配置地址解析
 ```
 vim /etc/hosts
