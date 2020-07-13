@@ -23,7 +23,7 @@ systemctl enable rpcbind
 systemctl start nfs
 systemctl enable nfs
 #ip addr|grep -o -e 'inet [0-9]\{1,3\}.[0-9]\{1,3\}.[0-9]\{1,3\}.[0-9]\{1,3\}'|egrep -v '172.17.0|127.0.0'|awk '{print $2}'
-echo -n "请输入nfs服务器IP地址:"
+echo -n "请输入nfs服务器IP地址(本机地址):"
 read ip
 # 取根路径为开机自动挂载准备
 echo -n "请输入上面创建的目录(只需输入[根路径] 如:上面创建的目录是/data/k8s 这里只需输入/data/即可):"
