@@ -1,5 +1,6 @@
 # harbor脚本部署
-> 注意：需要提前下载好离线包,并和脚本处于同一目录
+> 注意：需要提前下载好[`harbor-offline-installer-v1.7.0.tgz`](https://storage.googleapis.com/harbor-releases/release-1.7.0/harbor-offline-installer-v1.7.0.tgz)离线包,并和脚本处于同一目录  
+本脚本根据harbor1.7版本进行编写,其他版本未测试
 
 |脚本名称|操作系统|说明|备注|作用|
 |:--:|:--:|:--:|:--:|:--:|
