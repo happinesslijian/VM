@@ -18,10 +18,14 @@ ${share_dir} *(rw,sync,no_root_squash)
 EOF
 # 启动rpcbind服务
 systemctl start rpcbind
+sleep 10
 systemctl enable rpcbind
+sleep 10
 # 启动nfs服务
 systemctl start nfs
+sleep 10
 systemctl enable nfs
+sleep 10
 #ip addr|grep -o -e 'inet [0-9]\{1,3\}.[0-9]\{1,3\}.[0-9]\{1,3\}.[0-9]\{1,3\}'|egrep -v '172.17.0|127.0.0'|awk '{print $2}'
 echo -n "请输入nfs服务器IP地址(本机地址):"
 read ip
@@ -35,10 +39,14 @@ EOF
 echo "-------------nfs服务已安装完毕-------------"
 # 查看rpcbind服务是否运行
 systemctl status rpcbind
+sleep 10
 # 查看nfs服务是否运行
 systemctl status nfs
+sleep 10
 # 查看是否挂载成功(无任何输出即可)
 mount -a
+# 查看本机是否有挂载目录
+showmount -e localhost
 # 查看开机自启动列表
 systemctl list-unit-files | egrep 'nfs|rpcbind' | grep enabled
 exit
