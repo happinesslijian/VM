@@ -1,7 +1,7 @@
 #!/bin/sh
 ###install trojan
 yum -y install wget 
-cd /usr/src && wget https://github.com/trojan-gfw/trojan/releases/download/v1.15.1/trojan-1.15.1-linux-amd64.tar.xz
+cd /usr/src && wget -c https://github.com/trojan-gfw/trojan/releases/download/v1.15.1/trojan-1.15.1-linux-amd64.tar.xz
 tar xvf trojan-1.15.1-linux-amd64.tar.xz
 
 cat > /usr/src/trojan/config.json <<-EOF
