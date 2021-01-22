@@ -17,6 +17,7 @@ https://my.telegram.org/apps
 **注意：一定要写上 +86 134xxxxxxx  验证码会发送到telegram里而不是手机短信**  
 ![微信截图_20210122000029.png](https://i.loli.net/2021/01/22/ZamMSc6JilAW7eP.png)
 ![微信截图_20210122000107.png](https://i.loli.net/2021/01/22/q5IcfNUZXgOsne2.png)  
+我选择创建的application种类为app(这里填什么都行 )
 创建一个自己的public-key
 复制public-key到服务器
 
