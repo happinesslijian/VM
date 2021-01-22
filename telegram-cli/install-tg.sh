@@ -2,7 +2,7 @@
 cd /root/
 yum update -y
 yum -y install openssl-devel zlib-devel wget 
-yum groupinstall "Development Tools"
+yum -y groupinstall "Development Tools"
 
 wget -c https://github.com/libevent/libevent/releases/download/release-2.1.12-stable/libevent-2.1.12-stable.tar.gz
 tar xf libevent-2.1.12-stable.tar.gz
