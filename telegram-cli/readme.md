@@ -21,9 +21,9 @@ sh trojan.sh
 ```
 **注意：如果重启了Trojan或privoxy服务需要重新执行如下**
 ```
-export https_proxy=http://127.0.0.1:8118 \ 
- http_proxy=http://127.0.0.1:8118 \ 
- all_proxy=socks5://127.0.0.1:1080 
+export https_proxy=http://127.0.0.1:8118 \
+http_proxy=http://127.0.0.1:8118 \
+all_proxy=socks5://127.0.0.1:1080
 ```
 ```
 # docker 运行
