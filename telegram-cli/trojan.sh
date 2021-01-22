@@ -1,6 +1,6 @@
 #!/bin/sh
 ###install trojan
-yum -y install wget
+yum -y install wget 
 cd /usr/src && wget https://github.com/trojan-gfw/trojan/releases/download/v1.15.1/trojan-1.15.1-linux-amd64.tar.xz
 tar xvf trojan-1.15.1-linux-amd64.tar.xz
 
@@ -77,7 +77,7 @@ ps aux | grep trojan | grep -v grep
 systemctl enable trojan
 
 ###install privoxy
-yum -y install privoxy
+yum -y install update epel-release privoxy
 cat >> /etc/privoxy/config <<EOF
 forward-socks5t / 127.0.0.1:1080 .
 EOF
