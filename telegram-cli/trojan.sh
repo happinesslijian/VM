@@ -53,14 +53,12 @@ cat > /usr/src/trojan/config.json <<-EOF
         "cafile": ""
     }
 }
-
 EOF
 
 cat > /etc/systemd/system/trojan.service <<-EOF
 [Unit]
 Description=trojan
 After=network.target
-
 [Service]
 Type=simple
 PIDFile=/usr/src/trojan/trojan.pid
@@ -68,10 +66,8 @@ ExecStart=/usr/src/trojan/trojan -c /usr/src/trojan/config.json -l /usr/src/troj
 ExecReload=/bin/kill -HUP \$MAINPID
 Restart=on-failure
 RestartSec=1s
-
 [Install]
 WantedBy=multi-user.target
-
 EOF
 
 systemctl start trojan
