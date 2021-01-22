@@ -4,10 +4,6 @@
 示例：我这里使用Trojan配合privoxy进行科学上网。  
 **环境:** centos7
 ```
-# 安装Trojan和privoxy
-sh trojan.sh
-```
-```
 # 编译安装telegram-cli
 sh install-tg.sh
 ```
@@ -19,7 +15,10 @@ https://my.telegram.org/apps
 ![微信截图_20210122000107.png](https://i.loli.net/2021/01/22/q5IcfNUZXgOsne2.png)  
 我选择创建的application种类为app(这里填什么都行 )  
 将 Public keys 复制，回到服务器端。将复制的密钥保存到 tg-server.pub 文件中
-
+```
+# 安装Trojan和privoxy
+sh trojan.sh
+```
 ```
 # docker 运行
 docker run -it --rm -v /root/.telegram-cli:/home/user/.telegram-cli frankwolf/telegram-cli
