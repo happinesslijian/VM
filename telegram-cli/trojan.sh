@@ -77,7 +77,8 @@ ps aux | grep trojan | grep -v grep
 systemctl enable trojan
 
 ###install privoxy
-yum -y install update epel-release privoxy
+yum -y update
+yum -y install epel-release privoxy
 cat >> /etc/privoxy/config <<EOF
 forward-socks5t / 127.0.0.1:1080 .
 EOF
