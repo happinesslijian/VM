@@ -22,6 +22,14 @@ function install_docker() {
 }' > /etc/docker/daemon.json
 	systemctl daemon-reload
 	systemctl restart docker
+	#安装docker-compose
+	timedatectl set-timezone Asia/Shanghai
+	echo -e "server 210.72.145.44 iburst \nserver ntp.aliyun.com iburst" >> /etc/chrony.conf
+	systemctl restart chronyd
+	chronyc sources -y
+	sudo curl -L "https://ghproxy.com/https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+	chmod +x /usr/local/bin/docker-compose
+	docker-compose -v 
 }
 #centos8.2默认自带podman所以要卸载掉
 dnf list installed podman
@@ -32,4 +40,3 @@ elif [ $? -gt 0 ]; then
 	echo "podman不存在"
 	install_docker
 fi
-
