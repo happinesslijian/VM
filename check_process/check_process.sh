@@ -7,18 +7,18 @@ if [ $? -eq 0 ]; then
         successmsg=" 
         TIME:$(date +%F-%T) \n
         HOSTNAME:$(hostname) \n
-		IPADDR:$(ifconfig | grep inet | egrep -v 'inet6|127' | awk 'NR==4{print $2}') \n
+	IPADDR:$(ifconfig | grep inet | egrep -v 'inet6|127' | awk 'NR==4{print $2}') \n
         SERVICENAME:$i \n
-		SERVICESTATUS:$status \n
+	SERVICESTATUS:$status \n
         "
         echo -e $successmsg >> $txt
 else
         failmsg="
         TIME:$(date +%F-%T) \n
         HOSTNAME:$(hostname) \n
-		IPADDR:$(ifconfig | grep inet | egrep -v 'inet6|127' | awk 'NR==4{print $2}') \n
+	IPADDR:$(ifconfig | grep inet | egrep -v 'inet6|127' | awk 'NR==4{print $2}') \n
         SERVICENAME:$i \n
-		SERVICESTATUS:$status \n
+	SERVICESTATUS:$status \n
         "
         echo -e $failmsg >> $txt 
 fi
