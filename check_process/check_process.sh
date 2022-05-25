@@ -30,6 +30,15 @@ do
 	status=$(systemctl is-active $i)
 	check
 done
+#通过邮件通知
+mail=$(cat $txt | grep -B 5 -w inactive)
+if [ $? -eq 0 ]; then
+        echo -e "${mail}" | mailx -c wzb201xxxx@163.com -s "TCI服务定时巡检" 151xxxxxxxx@163.com
+else
+        echo -e "TCI服务都运行正常" | mailx -c wzb201xxxx@163.com -s "TCI服务定时巡检" 151xxxxxxxx@163.com
+fi
+
+#通过pushplus通知到微信
 TOKEN="90aa4ee226b74c81af109593292cxxxx"
 title="监控TCS进程"
 URLPUSHPLUS="http://www.pushplus.plus/send/"
