@@ -92,3 +92,14 @@ rm -rf containerd.io-1.4.12-3.1.el8.x86_64.rpm
 cd /root/docker
 rpm -ivh ./*
 ```
+
+### centos8.5 离线安装docker
+```
+# centos8.5自带podman 所以要先卸载掉
+yum erase -y podman buildah
+# centos8使用yum install docker -y时，默认安装的是podman-docker软件 所以我们这样做：
+# 下载docker-ce源
+curl https://download.docker.com/linux/centos/docker-ce.repo -o /etc/yum.repos.d/docker-ce.repo
+yum install docker-ce --downloadonly --downloaddir=./
+rpm -ivh ./*
+```
