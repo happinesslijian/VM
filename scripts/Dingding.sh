@@ -1,7 +1,7 @@
 #!/bin/bash
 read -r -p "输入使用人： " User
 read -r -p "输入资产编码： " Assetcode
-Linkingnic=`nmcli con show | egrep -v 'docker|br|lo|veth' | tail -n +2 | awk '{print $6}'`
+Linkingnic=`nmcli con show --active | egrep -v 'docker|br-|lo|veth' | tail -n1 | awk '{print $5}'`
 Mac=`ifconfig $Linkingnic | awk 'NR==4{print $2}'`
 echo -e 使用人是:$User 资产编码是:$Assetcode Mac地址是:$Mac
 
