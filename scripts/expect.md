@@ -34,6 +34,12 @@ expect 是进入到expect后才有的命令。（一共有两个expect 一个是
 
 **8 $argv expect 脚本可以接受从bash传递过来的参数，可以使用[lindex $argv n]获得，n从0开始，分别表示第一个，第二个，第三个.......参数**
 
+### 小提示：
+```
+如果不希望ssh时出现yes/no的提示，远程时使用如下选项:
+# ssh -o StrictHostKeyChecking=no $IP:PORT
+# scp -o StrictHostKeyChecking=no file1 $user@$ip:/home/
+```
 ## 测试无交互式ssh链接
 
 
