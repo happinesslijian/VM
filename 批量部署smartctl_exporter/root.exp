@@ -1,0 +1,50 @@
+#!/usr/bin/expect
+set ip [ lindex $argv 0 ]
+set user [ lindex $argv 1 ]
+set password [ lindex $argv 2 ]
+set smartctl_exporter_dir [ lindex $argv 3 ]
+set smartctl_exporter_file [ lindex $argv 4 ]
+set install_supervisor [ lindex $argv 5 ]
+set smartctl [ lindex $argv 6 ]
+        expect 
+	spawn scp -o StrictHostKeyChecking=no  $smartctl_exporter_dir $user@$ip:/home/$user
+	expect {
+                "yes/no/" { send "yes\r";exp_contiune }
+                "password" { send "$password\r" }
+        }
+	expect 
+	spawn scp -o StrictHostKeyChecking=no $smartctl_exporter_file $user@$ip:/home/$user	
+	expect {
+		"yes/no/" { send "yes\r";exp_contiune }
+		"password" { send "$password\r" }
+	}
+        expect
+        spawn scp -o StrictHostKeyChecking=no $install_supervisor $user@$ip:/home/$user
+        expect {
+                "yes/no/" { send "yes\r";exp_contiune }
+                "password" { send "$password\r" }
+        }
+        expect
+        spawn scp -o StrictHostKeyChecking=no $smartctl $user@$ip:/home/$user
+        expect {
+                "yes/no/" { send "yes\r";exp_contiune }
+                "password" { send "$password\r" }
+        }
+        expect
+        spawn ssh -o StrictHostKeyChecking=no $user@$ip
+        expect {
+                "yes/no/" { send "yes\r";exp_contiune }
+                "password" { send "$password\r" }
+        }
+        expect  
+	send "sudo -i\r"
+	expect {
+		"password" { send "$password\r" }
+	}
+	expect 
+	send "bash /home/$user/install_supervisor.sh\r"
+	expect 
+	send "exit\r"
+	expect 
+	send "exit\r"
+	interact
