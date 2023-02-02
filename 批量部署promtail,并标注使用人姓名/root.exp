@@ -1,0 +1,39 @@
+#!/usr/bin/expect
+set ip [ lindex $argv 0 ]
+set user [ lindex $argv 1 ]
+set password [ lindex $argv 2 ]
+set promtail [ lindex $argv 3 ]
+set install_promtail [ lindex $argv 4 ]
+set people [ lindex $argv 5 ]
+        expect 
+	spawn scp -o StrictHostKeyChecking=no $promtail $user@$ip:/home/$user
+	expect {
+                "yes/no/" { send "yes\r";exp_contiune }
+                "password" { send "$password\r" }
+        }
+	expect 
+	spawn scp -o StrictHostKeyChecking=no $install_promtail $user@$ip:/home/$user
+	expect {
+		"yes/no/" { send "yes\r";exp_contiune }
+		"password" { send "$password\r" }
+	}
+        expect
+        spawn ssh -o StrictHostKeyChecking=no $user@$ip
+        expect {
+                "yes/no/" { send "yes\r";exp_contiune }
+                "password" { send "$password\r" }
+        }
+        expect  
+	send "sudo -i\r"
+	expect {
+		"password" { send "$password\r" }
+	}
+	expect
+	exp_send "echo $people > /tmp/machine_user.txt\r"
+	expect 
+	send "bash -x /home/$user/install_promtail.sh\r"
+	expect 
+	send "exit\r"
+	expect 
+	send "exit\r"
+	interact
