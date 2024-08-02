@@ -118,6 +118,8 @@ mv docker/* /usr/local/bin/
 mv docker-rootless-extras/* /usr/local/bin/
 
 # 二进制文件不会创建服务文件，需要手动创建一个systemd服务文件来管理docker服务
+sudo vim /etc/systemd/system/docker.service
+
 
 [Unit]
 Description=Docker Application Container Engine
