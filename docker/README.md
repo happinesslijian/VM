@@ -68,6 +68,9 @@ rpm -ivh *.rpm
 ```
 wget https://download.docker.com/linux/centos/7/x86_64/stable/Packages/docker-ce-19.03.11-3.el7.x86_64.rpm
 wget https://download.docker.com/linux/ubuntu/dists/xenial/pool/stable/amd64/docker-ce-cli_19.03.11~3-0~ubuntu-xenial_amd64.deb
+
+#参考如下网站下载新版本docker
+https://download.docker.com/linux/static/stable/x86_64/
 dpkg -i *.deb
 ```
 ### centos8.2离线安装docker
