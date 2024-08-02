@@ -152,3 +152,5 @@ sudo systemctl status docker
 # 查看版本
 docker --version
 ```
+
+[关于镜像加速器](https://cr.console.aliyun.com/cn-beijing/instances/mirrors)
