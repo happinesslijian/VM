@@ -1,0 +1,8 @@
+### 执行
+
+```
+docker build --no-cache -t nginx:20241218_Add_Nginx_Vts_Module
+```
+
+### 说明
+该镜像只是nginx反向代理镜像,内部含有Vhost Traffic Status模块
