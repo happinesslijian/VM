@@ -1,0 +1,35 @@
+version: '2'
+services:
+  www:
+    image: nginx:20241213 # 替换为新构建镜像的名称
+    container_name: nginx
+    restart: always
+
+    # 挂载的卷
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro        # 主 nginx 配置文件
+      - ./site.d:/etc/nginx/conf.d                  # HTTP 配置目录
+      - ./stream.d:/etc/nginx/stream.d              # TCP/UDP 配置目录
+      - ./letsencrypt:/etc/letsencrypt              # 证书目录
+      - /media/tx-deepocean/Data/compose/nginx/log/:/var/log/nginx # 日志
+      - /media/tx-deepocean/Data/www/:/data/www     # 静态资源目录
+
+    ports:
+      - 80:80                                       # HTTP
+      - 443:443                                     # HTTPS
+      - 81:81                                       # 备用 HTTP 端口
+      - 5780:5780                                   # 自定义端口
+      - 8488:8488                                   # 自定义端口
+      - 8081:8080                                   # 自定义端口
+      - 2222:2222                                   # 自定义端口
+
+    logging:
+      driver: json-file
+      options:
+        max-file: '5'
+        max-size: 10m
+
+networks:
+  default:
+    external: true
+    name: service
