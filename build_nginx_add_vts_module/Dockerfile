@@ -11,7 +11,7 @@ RUN wget http://nginx.org/download/nginx-1.22.0.tar.gz && \
     # 下载 vhost_traffic_status 模块
     git clone -b v0.2.2 https://github.com/vozlt/nginx-module-vts.git && \
     # 编译 Nginx 并包含 vhost_traffic_status 模块
-    ./configure --prefix=/var/lib/nginx --sbin-path=/usr/sbin/nginx --modules-path=/usr/lib/nginx/modules --conf-path=/etc/nginx/nginx.conf --with-http_ssl_module --add-dynamic-module=nginx-module-vts --with-compat --with-stream --with-http_v2_module && \
+    ./configure --prefix=/var/lib/nginx --sbin-path=/usr/sbin/nginx --modules-path=/usr/lib/nginx/modules --conf-path=/etc/nginx/nginx.conf --with-http_ssl_module --add-dynamic-module=nginx-module-vts --with-compat --with-stream --with-http_v2_module --with-http_realip_module --with-http_stub_status_module && \
     make && \
     make install
 
