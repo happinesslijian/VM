@@ -1,7 +1,9 @@
 version: '2'
 services:
   www:
-    image: nginx:20241218_Add_Nginx_Vts_Module # 替换为新构建镜像的名称
+    #image: nginx:nginx_reverse_proxy1.27.0 # 替换为新构建镜像的名称
+    #image: nginx_reverse_proxy1.22.0  # 替换为新构建镜像的名称
+    image: nginx:GEOIP  # 替换为新构建镜像的名称
     container_name: nginx
     restart: always
 
@@ -13,6 +15,8 @@ services:
       - ./letsencrypt:/etc/letsencrypt              # 证书目录
       - /media/tx-deepocean/Data/compose/nginx/log/:/var/log/nginx # 日志
       - /media/tx-deepocean/Data/www/:/data/www     # 静态资源目录
+      - ./GeoLite2-Country.mmdb:/etc/GeoLite2-Country.mmdb  #country信息
+      - ./GeoLite2-City.mmdb:/etc/GeoLite2-City.mmdb   #city信息
 
     ports:
       - 80:80                                       # HTTP
