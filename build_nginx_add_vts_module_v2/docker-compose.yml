@@ -1,0 +1,25 @@
+version: "2"
+
+services:
+  nginx:
+    image: nginx_vts:v2 # 👉 你构建镜像时使用的名称，必要时替换
+    container_name: nginx_vts
+    ports:
+      - "80:80"       # HTTP 端口
+      - "443:443"     # HTTPS 端口（如未启用可移除）
+      - "18989:18989" # VTS /status 页面
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro         # 主配置文件（已覆盖镜像内默认）
+      - ./conf.d:/etc/nginx/conf.d:ro                 # 虚拟主机配置
+      - ./stream.d:/etc/nginx/stream.d:ro             # TCP 配置
+      - ./geoip:/opt/nginx/geoip:ro                   # GeoIP2 数据挂载路径
+      - ./letsencrypt:/etc/letsencrypt:ro             # 如需支持 HTTPS 证书
+      - ./logs:/opt/nginx/logs                        # 日志挂载
+    networks:
+      - nginx_net
+    restart: always
+
+networks:
+  nginx_net:
+    driver: bridge
+
