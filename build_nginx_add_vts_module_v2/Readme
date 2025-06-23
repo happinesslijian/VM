@@ -1,0 +1,13 @@
+### 执行
+
+```
+docker build --no-cache -t nginx:20250623_Add_Nginx_Vts_Module
+```
+
+### 说明
+该镜像只是nginx反向代理镜像,内部含有Vhost Traffic Status模块
+2024/12/25新增geoip2模块
+https://github.com/wp-statistics/GeoLite2-Country
+https://github.com/wp-statistics/GeoLite2-City
+2025/6/23对nginx内部目录梳理
+将geoip    logs     modules目录统一整理到opt目录下 整体看起来更加结构化便于维护
